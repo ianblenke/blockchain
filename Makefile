@@ -5,7 +5,7 @@ all: crontab
 	git commit -m 'Automated commit on '`date +%Y%m%d%H%M%S`
 
 crontab:
-	@if ! crontab -l | grep "/usr/bin/make -C ~/github.com/ianblenke/blockchain" ; then \
-	  ( crontab -l ; echo "0 12 * * *	/usr/bin/make -C ~/github.com/ianblenke/blockchain" ) | crontab - ; \
+	@if ! crontab -l | grep "/usr/bin/make -C `pwd`" ; then \
+	  ( crontab -l ; echo "0 12 * * *	/usr/bin/make -C `pwd`" ) | crontab - ; \
 	fi
 
